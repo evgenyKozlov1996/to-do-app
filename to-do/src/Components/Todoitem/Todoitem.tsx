@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './Styles/ToDoItemStyle.css';
+import './Styles/ToDoItemStyles.css';
 
 export type TodoItem = React.StatelessComponent<TodoItemProps>;
 
@@ -16,10 +16,10 @@ export const TodoItem: React.SFC<TodoItemProps> = (props) => {
     const toDoItem = (
         <div className="Card">
             <div className="CardContainer">
-                <h2>{props.name}</h2>
-                <h2>{props.description}</h2>
-                <h2>{props.beginDate ? props.beginDate.toLocaleDateString() : ''}</h2>
-                <h2>{props.endDate ? props.endDate.toLocaleDateString() : ''}</h2>
+                <h2>Name: {props.name}</h2>
+                <h2>Description: {props.description}</h2>
+                <h2>Begin date: {props.beginDate ? props.beginDate.toLocaleDateString() : ''}</h2>
+                <h2>End date: {props.endDate ? props.endDate.toLocaleDateString() : ''}</h2>
             </div>
         </div>
     );
