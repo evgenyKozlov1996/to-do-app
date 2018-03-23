@@ -18,8 +18,8 @@ export const TodoItem: React.SFC<TodoItemProps> = (props) => {
             <div className="CardContainer">
                 <h2>{props.name}</h2>
                 <h2>{props.description}</h2>
-                <h2>{props.beginDate.toLocaleDateString()}</h2>
-                <h2>{props.endDate.toLocaleDateString()}</h2>
+                <h2>{props.beginDate ? props.beginDate.toLocaleDateString() : ''}</h2>
+                <h2>{props.endDate ? props.endDate.toLocaleDateString() : ''}</h2>
             </div>
         </div>
     );
