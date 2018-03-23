@@ -1,14 +1,22 @@
 import * as React from 'react';
-import { TodoItem } from '../Todoitem/Todoitem';
+import { TodoItemProps } from '../Todoitem/Todoitem';
 
-export type TodoContainer = React.SFC<TodoContainerProps>;
+export type TodoContainer = React.StatelessComponent<TodoContainerProps>;
+
+type TodoItem = React.ReactElement<TodoItemProps> | null;
 
 export interface TodoContainerProps {
-    items: TodoItem[];
+    anchor?: string;
+    items?: TodoItem[];
 }
-export const TodoContainer: TodoContainer = (props) => {
-    return <h1>container</h1>;
-};
+
+export const TodoContainer: React.SFC<TodoContainerProps> = (props) => {
+    return (
+        <div>
+            <h1>{props.anchor}</h1>
+            {props.items}
+        </div>);
+    };
 
 TodoContainer.defaultProps = {
     items: []
