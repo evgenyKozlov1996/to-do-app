@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { TodoItemProps } from '../Todoitem/Todoitem';
 
-export type TodoContainer = React.StatelessComponent<TodoContainerProps>;
+export type TodoContainerType = React.StatelessComponent<TodoContainerProps>;
 
 type TodoItem = React.ReactElement<TodoItemProps> | null;
 
