@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { TodoItemProps } from '../Todoitem/Todoitem';
+import { GridList, Subheader } from 'material-ui';
 
 export type TodoContainerType = React.StatelessComponent<TodoContainerProps>;
 
@@ -7,17 +8,21 @@ type TodoItem = React.ReactElement<TodoItemProps> | null;
 
 export interface TodoContainerProps {
     anchor?: string;
-    items?: TodoItem[];
+    children: TodoItem[] | TodoItem;
+    cols?: number;
 }
 
 export const TodoContainer: React.SFC<TodoContainerProps> = (props) => {
     return (
-        <div>
-            <h1>{props.anchor}</h1>
-            {props.items}
-        </div>);
+        <GridList cols={props.cols}>
+            <Subheader >
+                {props.anchor}
+            </Subheader>
+            {props.children}
+        </GridList>
+        );
     };
 
 TodoContainer.defaultProps = {
-    items: []
+    cols: 2
 };
